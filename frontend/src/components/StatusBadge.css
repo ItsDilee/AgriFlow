@@ -1,0 +1,23 @@
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.status-active { background-color: var(--color-success-bg); color: var(--color-success); }
+.status-completed { background-color: var(--color-success-bg); color: var(--color-success); }
+.status-verified { background-color: var(--color-success-bg); color: var(--color-success); }
+.status-available { background-color: var(--color-success-bg); color: var(--color-success); }
+
+.status-pending { background-color: var(--color-warning-bg); color: var(--color-warning); }
+.status-processing { background-color: var(--color-warning-bg); color: var(--color-warning); }
+
+.status-cancelled { background-color: var(--color-danger-bg); color: var(--color-danger); }
+.status-full { background-color: var(--color-danger-bg); color: var(--color-danger); }
+
+.status-default { background-color: var(--color-border); color: var(--color-text-muted); }

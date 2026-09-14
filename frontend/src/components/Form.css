@@ -1,0 +1,28 @@
+.agri-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.agri-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.agri-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .agri-form-actions {
+    flex-direction: column;
+  }
+
+  .agri-form-actions .btn {
+    width: 100%;
+  }
+}
