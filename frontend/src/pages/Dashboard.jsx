@@ -1,32 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import StatusBadge from '../components/StatusBadge';
-import './../pages/PageStyles.css';
+import { apiGet } from '../services/api';
+import './PageStyles.css';
 
 const Dashboard = () => {
+  const [apiStatus, setApiStatus] = useState(null); // null | 'connected' | 'offline'
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    apiGet('/status')
+      .then((data) => {
+        setApiStatus(data.db === 'connected' ? 'connected' : 'degraded');
+      })
+      .catch(() => {
+        setApiStatus('offline');
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div className="page-container">
       <div className="page-header">
         <h1 className="page-title">AgriFlow Dashboard</h1>
-        <p className="page-subtitle">Agricultural Procurement & Queue Management</p>
+        <p className="page-subtitle">Agricultural Procurement &amp; Queue Management</p>
       </div>
 
-      <div className="grid grid-3">
+      {/* Backend connectivity banner */}
+      <div className="dashboard-status-bar">
+        <span className="status-label">System Status:</span>
+        {loading ? (
+          <StatusBadge status="processing" label="Checking…" />
+        ) : apiStatus === 'connected' ? (
+          <StatusBadge status="active" label="Backend Connected" />
+        ) : apiStatus === 'degraded' ? (
+          <StatusBadge status="pending" label="DB Disconnected" />
+        ) : (
+          <StatusBadge status="cancelled" label="Backend Offline" />
+        )}
+      </div>
+
+      {/* Stat overview — placeholder until real data endpoints land */}
+      <div className="grid grid-3" style={{ marginTop: '1.5rem' }}>
         <Card>
-          <h3>Appointments</h3>
-          <p style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--color-primary)' }}>12</p>
-          <StatusBadge status="active" label="Open" />
+          <p className="stat-label">Appointments</p>
+          <p className="stat-value">—</p>
+          <StatusBadge status="pending" label="Coming Soon" />
         </Card>
         <Card>
-          <h3>Queue Length</h3>
-          <p style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--color-primary)' }}>5</p>
-          <StatusBadge status="processing" label="Waiting" />
+          <p className="stat-label">Queue Length</p>
+          <p className="stat-value">—</p>
+          <StatusBadge status="pending" label="Coming Soon" />
         </Card>
         <Card>
-          <h3>Procurements</h3>
-          <p style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--color-primary)' }}>3</p>
-          <StatusBadge status="completed" label="Done" />
+          <p className="stat-label">Procurements</p>
+          <p className="stat-value">—</p>
+          <StatusBadge status="pending" label="Coming Soon" />
         </Card>
       </div>
 
