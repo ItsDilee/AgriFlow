@@ -16,6 +16,7 @@ import Unauthorized from './pages/Unauthorized';
 import FarmerDashboard from './pages/farmer/FarmerDashboard';
 import FarmerProfile from './pages/farmer/FarmerProfile';
 import FarmerAppointments from './pages/farmer/FarmerAppointments';
+import FarmerBookAppointment from './pages/farmer/FarmerBookAppointment';
 
 // Admin area
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -25,6 +26,18 @@ import AdminCentres from './pages/admin/AdminCentres';
 
 // Farmer — centres
 import FarmerCentres from './pages/farmer/FarmerCentres';
+
+// Phase 6 — queue
+import FarmerQueue from './pages/farmer/FarmerQueue';
+import AdminQueue from './pages/admin/AdminQueue';
+import FarmerProcurement from './pages/farmer/FarmerProcurement';
+import FarmerPayment from './pages/farmer/FarmerPayment';
+import FarmerNotifications from './pages/farmer/FarmerNotifications';
+import AdminProcurement from './pages/admin/AdminProcurement';
+import AdminPayment from './pages/admin/AdminPayment';
+import AdminNotifications from './pages/admin/AdminNotifications';
+import AdminAuditLogs from './pages/admin/AdminAuditLogs';
+import AdminReports from './pages/admin/AdminReports';
 
 import './styles/theme.css';
 
@@ -59,6 +72,14 @@ const App = () => {
               }
             />
             <Route
+              path="/farmer/appointments/book"
+              element={
+                <ProtectedRoute role="farmer">
+                  <FarmerBookAppointment />
+                </ProtectedRoute>
+              }
+            />
+            <Route
               path="/farmer/appointments"
               element={
                 <ProtectedRoute role="farmer">
@@ -71,6 +92,77 @@ const App = () => {
               element={
                 <ProtectedRoute role="farmer">
                   <FarmerCentres />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/farmer/queue"
+              element={
+                <ProtectedRoute role="farmer">
+                  <FarmerQueue />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/farmer/procurement"
+              element={
+                <ProtectedRoute role="farmer">
+                  <FarmerProcurement />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/farmer/payment"
+              element={
+                <ProtectedRoute role="farmer">
+                  <FarmerPayment />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/farmer/notifications"
+              element={
+                <ProtectedRoute role="farmer">
+                  <FarmerNotifications />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/procurements"
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminProcurement />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/payments"
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminPayment />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/reports"
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminReports />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/audit"
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminAuditLogs />
+                </ProtectedRoute>
+              }
+            />
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminNotifications />
                 </ProtectedRoute>
               }
             />
@@ -105,6 +197,14 @@ const App = () => {
               element={
                 <ProtectedRoute role="admin">
                   <AdminUsers />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/queue"
+              element={
+                <ProtectedRoute role="admin">
+                  <AdminQueue />
                 </ProtectedRoute>
               }
             />

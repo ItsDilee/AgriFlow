@@ -49,6 +49,18 @@ const Navbar = () => {
               <Link to="/farmer/appointments" className={`nav-link ${isActive('/farmer/appointments') ? 'active' : ''}`}>
                 Appointments
               </Link>
+              <Link to="/farmer/queue" className={`nav-link ${isActive('/farmer/queue') ? 'active' : ''}`}>
+                Live Queue
+              </Link>
+              <Link to="/farmer/procurement" className={`nav-link ${isActive('/farmer/procurement') ? 'active' : ''}`}>
+                Procurement
+              </Link>
+              <Link to="/farmer/payment" className={`nav-link ${isActive('/farmer/payment') ? 'active' : ''}`}>
+                Payments
+              </Link>
+              <Link to="/farmer/notifications" className={`nav-link ${isActive('/farmer/notifications') ? 'active' : ''}`}>
+                Notifications
+              </Link>
               <Link to="/farmer/profile" className={`nav-link ${isActive('/farmer/profile') ? 'active' : ''}`}>
                 Profile
               </Link>
@@ -63,6 +75,24 @@ const Navbar = () => {
               </Link>
               <Link to="/admin/centres" className={`nav-link ${isActive('/admin/centres') ? 'active' : ''}`}>
                 Centres
+              </Link>
+              <Link to="/admin/queue" className={`nav-link ${isActive('/admin/queue') ? 'active' : ''}`}>
+                Queue
+              </Link>
+              <Link to="/admin/procurements" className={`nav-link ${isActive('/admin/procurements') ? 'active' : ''}`}>
+                Procurement
+              </Link>
+              <Link to="/admin/payments" className={`nav-link ${isActive('/admin/payments') ? 'active' : ''}`}>
+                Payments
+              </Link>
+              <Link to="/admin/notifications" className={`nav-link ${isActive('/admin/notifications') ? 'active' : ''}`}>
+                Notifications
+              </Link>
+              <Link to="/admin/audit" className={`nav-link ${isActive('/admin/audit') ? 'active' : ''}`}>
+                Audit Logs
+              </Link>
+              <Link to="/admin/reports" className={`nav-link ${isActive('/admin/reports') ? 'active' : ''}`}>
+                Reports
               </Link>
               <Link to="/admin/farmers" className={`nav-link ${isActive('/admin/farmers') ? 'active' : ''}`}>
                 Farmers
@@ -122,6 +152,15 @@ const Navbar = () => {
               <Link to="/farmer/appointments" className={`mobile-nav-link ${isActive('/farmer/appointments') ? 'active' : ''}`} onClick={closeMenu}>
                 Appointments
               </Link>
+              <Link to="/farmer/queue" className={`mobile-nav-link ${isActive('/farmer/queue') ? 'active' : ''}`} onClick={closeMenu}>
+                Live Queue
+              </Link>
+              <Link to="/farmer/procurement" className={`mobile-nav-link ${isActive('/farmer/procurement') ? 'active' : ''}`} onClick={closeMenu}>
+                Procurement
+              </Link>
+              <Link to="/farmer/payment" className={`mobile-nav-link ${isActive('/farmer/payment') ? 'active' : ''}`} onClick={closeMenu}>
+                Payments
+              </Link>
               <Link to="/farmer/profile" className={`mobile-nav-link ${isActive('/farmer/profile') ? 'active' : ''}`} onClick={closeMenu}>
                 Profile
               </Link>
@@ -136,8 +175,26 @@ const Navbar = () => {
               <Link to="/admin/centres" className={`mobile-nav-link ${isActive('/admin/centres') ? 'active' : ''}`} onClick={closeMenu}>
                 Centres
               </Link>
+              <Link to="/admin/queue" className={`mobile-nav-link ${isActive('/admin/queue') ? 'active' : ''}`} onClick={closeMenu}>
+                Queue
+              </Link>
               <Link to="/admin/farmers" className={`mobile-nav-link ${isActive('/admin/farmers') ? 'active' : ''}`} onClick={closeMenu}>
                 Farmers
+              </Link>
+              <Link to="/admin/procurements" className={`mobile-nav-link ${isActive('/admin/procurements') ? 'active' : ''}`} onClick={closeMenu}>
+                Procurement
+              </Link>
+              <Link to="/admin/payments" className={`mobile-nav-link ${isActive('/admin/payments') ? 'active' : ''}`} onClick={closeMenu}>
+                Payments
+              </Link>
+              <Link to="/admin/notifications" className={`mobile-nav-link ${isActive('/admin/notifications') ? 'active' : ''}`} onClick={closeMenu}>
+                Notifications
+              </Link>
+              <Link to="/admin/audit" className={`mobile-nav-link ${isActive('/admin/audit') ? 'active' : ''}`} onClick={closeMenu}>
+                Audit Logs
+              </Link>
+              <Link to="/admin/reports" className={`mobile-nav-link ${isActive('/admin/reports') ? 'active' : ''}`} onClick={closeMenu}>
+                Reports
               </Link>
               <Link to="/admin/users" className={`mobile-nav-link ${isActive('/admin/users') ? 'active' : ''}`} onClick={closeMenu}>
                 Users
